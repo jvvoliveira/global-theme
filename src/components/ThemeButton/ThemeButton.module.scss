@@ -1,0 +1,16 @@
+@import "../../themes/index.scss";
+
+.button{
+    padding: 30px 60px;
+    border: 1px solid;
+    border-radius: 5%;
+    @include themify('background', 'primary');
+    @include themify('color', 'secondary');
+    font-size: 26px;
+
+    &:hover{
+        cursor: pointer;
+        @include themify('background', 'tertiary');
+        @include themify('color', 'primary');
+    }
+}

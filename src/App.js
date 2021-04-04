@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import ThemeButton from './components/ThemeButton/ThemeButton';
+import styles from './App.module.scss';
+
+import ThemeContextParent, { DEFAULT_THEME, DARK_THEME, LIGHT_THEME }  from './ThemeContextParent';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContextParent>
+      <div className={styles.app}>
+        <Header/>
+        <div className={styles.buttons}>
+        <ThemeButton changeTheme={DEFAULT_THEME}>Default</ThemeButton>
+        <ThemeButton changeTheme={DARK_THEME}>Dark</ThemeButton>
+        <ThemeButton changeTheme={LIGHT_THEME}>Light</ThemeButton>
+        </div>
+      </div>
+    </ThemeContextParent>
   );
 }
 

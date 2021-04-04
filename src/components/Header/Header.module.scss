@@ -1,0 +1,63 @@
+@import "../../themes/index.scss";
+
+.header{
+    width: 100%;
+    height: 100px;
+    @include themify('background', 'primary');
+    @include themify('border-color', 'secondary');
+    border: 2px solid;
+    text-align: center;
+    font-weight: 600;
+
+    p {
+        font-size: 28px;
+        @include themify('color', 'secondary');
+    }
+}
+
+//CSS que será gerado com o código acima:
+
+// .header{
+//     width: 100%;
+//     height: 100px;
+//     border: 2px solid;
+//     text-align: center;
+//     font-weight: 600;
+// }
+
+// .header.default{
+//     background: #3983e5;
+// }
+// .header.default{
+//     border-color: #eddc2a;
+// }
+
+// .header.dark{
+//     background: #222;
+// }
+// .header.dark{
+//     border-color: #26ccc9;
+// }
+
+// .header.light{
+//     background: #eee;
+// }
+// .header.light{
+//     border-color: #f78a8a;
+// }
+
+// .header p {
+//     font-size: 28px;
+// }
+
+// .header.default p{
+//     color: #eddc2a;
+// }
+
+// .header.dark p{
+//     color: #26ccc9;
+// }
+
+// .header.light p{
+//     color: #f78a8a;
+// }
